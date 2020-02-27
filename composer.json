@@ -1,0 +1,8 @@
+{   
+    "config": {
+        "process-timeout": 0
+    },
+    "scripts": {
+        "serve": "php laravel/artisan serve"
+    }
+}
