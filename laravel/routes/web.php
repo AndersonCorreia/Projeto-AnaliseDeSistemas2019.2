@@ -27,7 +27,7 @@ Route::post('/entrar','UserController@login')->name('login');
 Route::get("/logout", 'UserController@logout')->name('logout');
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('inicio');
 })->name('inicio');
 
 require_once __DIR__."/../resources/views/util/layoutUtil.php";
