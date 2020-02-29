@@ -83,6 +83,18 @@
                 <input class="form-control" maxlength="6" type="text" name="Número" placeholder="Nº"
                 value="{{isset($registro['numero']) ? $registro['numero'] : ''}}" required>
             </div>
+            
+            <div class="form-group col-sm-1">
+                <span>CEP</span>
+                <input class="form-control" maxlength="9" type="text" name="CEP" placeholder="99999-999" pattern="[0-9]{5}-[0-9]{3}$" 
+                value="{{isset($registro['CEP']) ? $registro['CEP'] : ''}}" required>
+            </div>
+
+            <div class="form-group col-sm-1">
+                <span>Telefone</span>
+                <input class="form-control" maxlength="14" type="text" name="Telefone" placeholder="(99)99999-9999" pattern="([0-9]){2}[0-9]{5}-[0-9]{4}$" 
+                value="{{isset($registro['telefone']) ? $registro['telefone'] : ''}}" required>
+            </div>
             <input type="hidden" value="{{ $registro['ID'] ?? 99 }}">
         </div>
     </fieldset>
