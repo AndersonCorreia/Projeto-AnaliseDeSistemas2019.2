@@ -20,7 +20,7 @@ Route::middleware(['auth'])->group(function () {
 
 });
 
-Route::get('/entrar', "UserController@telaEntrar")->name('entrar');
+Route::get('/entrar','UserController@telaEntrar')->name('entrar');
 Route::post('/entrar','UserController@login')->name('login');
 Route::get("/logout", 'UserController@logout')->name('logout');
 

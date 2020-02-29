@@ -30,7 +30,7 @@ class UserController extends Controller{
 
         return redirect()->route("cadastro.show");
     }
-
+    
     /**
      * faz o logout do usuario apagando todos os dados da sessão
      *
