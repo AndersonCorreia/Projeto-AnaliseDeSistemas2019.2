@@ -15,7 +15,7 @@ USE `projeto` ;
 CREATE TABLE IF NOT EXISTS `projeto`.`usuario` (
   `ID` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `usuario` VARCHAR(40) NOT NULL,
-  `senha` VARCHAR(20) NOT NULL
+  `senha` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE INDEX `usuario_UNIQUE` (`usuario` ASC))
 ENGINE = InnoDB;
