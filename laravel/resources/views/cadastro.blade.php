@@ -45,16 +45,16 @@
             </div>
             <div class="form-group col-sm-4">
                 <span>Cidade</span>
-                <input id="cidade" class="form-control"  type="text" name="Cidade" pattern="[a-zA-ZÀ-Úà-ú ]+$$" required>
+                <input id="cidade" class="form-control"  type="text" name="cidade" pattern="[a-zA-ZÀ-Úà-ú ]+$$" required>
             </div>
             <div class="form-group col-sm-8">
                 <span>Endereço</span>
-                <input id="endereco" class="form-control"  type="text" maxlength="50" name="Endereco" 
+                <input id="endereco" class="form-control"  type="text" maxlength="50" name="endereco" 
                 placeholder="Rua e Bairro" required>
             </div>
             <div class="form-group col-sm-2 col-4">    
                 <span>Número</span>
-                <input id="numero" class="form-control" type="text" name="Numero" maxlength="5" placeholder="xxx" required>
+                <input id="numero" class="form-control" type="text" name="numero" maxlength="5" placeholder="xxx" required>
             </div>
         </div>
     </fieldset>
