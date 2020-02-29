@@ -10,8 +10,8 @@ class CadastroController extends Controller{
     
     private $DAO;
 
-    public function __Construct(){
-        parent::__Construct();
+    public function Construct(){
+        parent:: Construct();
         $DAO = new ClienteDAO();
     }
 
@@ -45,7 +45,7 @@ class CadastroController extends Controller{
 
         $variaveis = [
             'itensMenu' => getMenuLinks(),
-            'paginaAtual' => "Cadastrar cliente",
+            'paginaAtual' => "Cadastrar Cliente",
         ];
 
         return view("cadastro",$variaveis);

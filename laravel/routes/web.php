@@ -12,13 +12,11 @@
 */
 Route::middleware(['auth'])->group(function () {
 
-    Route::get("/cadastro", "cadastroController@telaCadastrar")->name("cadastro.show");
+    Route::get("/cadastro", "CadastroController@telaCadastrar")->name("cadastro.show");
 
-    Route::get("/cadastro/editar", "cadastroController@telaEditar")->name("editarCadastro.show");
+    Route::get("/cadastro/editar", "CadastroController@telaEditar")->name("editarCadastro.show");
 
-    Route::post("/cadastro", "cadastroController@criar")->name("cadastro.post");
-    Route::post("/cadastro/editar", "cadastroController@editar")->name("editarCadastro.post");
-    Route::post("/cadastro/excluir", "cadastroController@excluir")->name("excluirCadastro.post");
+    Route::post("/cadastro/excluir", "CadastroController@excluir")->name("excluirCadastro.post");
 
 });
 
