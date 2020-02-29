@@ -14,11 +14,13 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get("/cadastro", "CadastroController@telaCadastrar")->name("cadastro.show");
 
-    Route::get("/cadastro/editar", "CadastroController@telaEditar")->name("editarCadastro.show");
+    //Route::get("/cadastro/editar", "CadastroController@telaEditar")->name("editarCadastro.show");
 
     Route::post("/cadastro/excluir", "CadastroController@excluir")->name("excluirCadastro.post");
 
 });
+
+Route::get("/editar", "CadastroController@telaEditar")->name("editarCadastro.show"); //rota temporária
 
 Route::get('/entrar', "UserController@telaEntrar")->name('entrar');
 Route::post('/entrar','UserController@login')->name('login');
