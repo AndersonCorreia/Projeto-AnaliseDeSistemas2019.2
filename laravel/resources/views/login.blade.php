@@ -1,7 +1,5 @@
 @include('layouts._includes.top')
 
-@section('conteudo')
-
 <div class="text-center mx-auto col-md-10">
     <h1>Entre</h1>
 </div>
@@ -26,7 +24,5 @@
         Esqueceu a sua senha? <a target="_blank" href="">Ajuda</a>.
     </h6>
 </form>
-
-@endsection
 
 @include('layouts._includes.footer')
