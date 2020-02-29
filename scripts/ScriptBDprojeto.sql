@@ -23,17 +23,24 @@ ENGINE = InnoDB;
 iNSERT INTO usuario (usuario, senha) VALUES ('administrador', 'senhaincrivel' );
 
 -- -----------------------------------------------------
--- Table `projeto`.`cliente
--- depois checar o tamnho correto de cnpj/cpf
+-- Table `projeto`.`empresa`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `projeto`.`cliente` (
+CREATE TABLE IF NOT EXISTS `projeto`.`empresa` (
   `ID` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `razao_social` VARCHAR(50) NOT NULL,
-  `nome_fantasia` VARCHAR(50) NOT NULL,
-  `CNPJ/CPF` VARCHAR(50) NOT NULL,
-  `tipo` ENUM('jurídica', 'fisica') NOT NULL
+  `razaoSocial` VARCHAR(50) NOT NULL,
+  `nomeFantasia` VARCHAR(50) NOT NULL,
+  `CNPJ` VARCHAR(19) NOT NULL,
+  `site` VARCHAR(50) NOT NULL,
+  `inscricaoEstadual` VARCHAR(9) NOT NULL,
+  `matriz` VARCHAR(40) NOT NULL,
+  `estado` VARCHAR(2) NOT NULL,
+  `cidade` VARCHAR(40) NOT NULL,
+  `endereco` VARCHAR(50) NOT NULL,
+  `numero` VARCHAR(6) NOT NULL,
+  `cep` CHAR(9) NOT NULL,
+  `telefone` VARCHAR(15) NOT NULL,
   PRIMARY KEY (`ID`),
-  UNIQUE INDEX `CNPJ/CPF_UNIQUE` (`CNPJ/CPF` ASC))
+  UNIQUE INDEX `CNPJ_UNIQUE` (`CNPJ` ASC))
 ENGINE = InnoDB;
 
 SET SQL_MODE=@OLD_SQL_MODE;
