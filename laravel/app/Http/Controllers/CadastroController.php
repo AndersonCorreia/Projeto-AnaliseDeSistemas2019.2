@@ -18,16 +18,19 @@ class CadastroController extends Controller{
     public function criar(){
 
         $DAO->INSERT($request->input() );
+        return redirect()->route("editarCadastro.show");
     }
 
     public function editar(){
 
         $DAO->UPDATE($request->input() );
+        return redirect()->route("editarCadastro.show");
     }
 
-    public function excluir(Request $request){
+    public function excluir(Request $request, int $ID){
         
-        $DAO->DELETEbyID($request->input("cliente_ID") );
+        $DAO->DELETEbyID($ID);
+        return redirect()->route("editarCadastro.show");
     }
 
     public function telaEditar(){
@@ -35,7 +38,7 @@ class CadastroController extends Controller{
         $variaveis = [
             'itensMenu' => getMenuLinks(),
             'paginaAtual' => "Editar ou excluir cadastro de cliente",
-            //'clientes' => $DAO->SELECT_ALL()
+            //'empresas' => $DAO->SELECT_ALL()
         ];
 
         return view("editarCadastro",$variaveis);

@@ -1,14 +1,14 @@
 @include('layouts._includes.top')
 
 <div class= "tela  bg-light">
-    <div id="menuLateral" class= "bg-dark border-right border-dark">
+    <div id="menuLateral" class= " border-right border-info">
         <img id="logo" class = "px-md-3 px-2 pt-3 mb-3" src="" height=auto  width=100%> 
         <div class="h-75 overflow-auto">
-            <nav class="p-lg-2 pr-1 py-1 navbar-left flex-column">
+            <nav class="p-lg-2 pr-1 py-5 my-5 navbar-left flex-column">
                 @foreach ($itensMenu as $key => $item){{--Para adicionar os itens do menu dinamicamente --}}
                     {{--A unica utilidade em manter esse foreach seria esse if da pagina atual--}}
                     @if ($item['texto']==($paginaAtual ?? 'Inicio')){{--Para destacar a pagina atual no menu --}}
-                        <a class="nav-link bg-secondary m-1 rounded active" href="{{$item['link']}}">{{$item['texto']}}</a>
+                        <a class="nav-link bg-info m-1 rounded active" href="{{$item['link']}}">{{$item['texto']}}</a>
                     @else
                         <a class="nav-link m-1 rounded" href="{{$item['link']}}">{{$item['texto']}}</a>
                     @endif
@@ -52,9 +52,12 @@
     nav a {
         color: ghostwhite;
     }
+    #menuLateral {
+        background-color: #3578E5;
+    }
     #menuLateral nav a:hover ,#menuLateral nav a:focus{
         color: royalblue;
-        background-color: ghostwhite;
+        background-color: azure;
     }
     hr {
         height: 0.1vh;
