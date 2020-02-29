@@ -6,7 +6,7 @@ use App\DB\ClienteDAO;
 
 require_once __DIR__."/../../../resources/views/util/layoutUtil.php";
 
-class UserController extends Controller{   
+class CadastroController extends Controller{   
     
     private $DAO;
 
@@ -45,7 +45,7 @@ class UserController extends Controller{
 
         $variaveis = [
             'itensMenu' => getMenuLinks(),
-            'paginaAtual' => "Editar ou excluir cadastro de cliente",
+            'paginaAtual' => "Cadastrar cliente",
         ];
 
         return view("cadastro",$variaveis);
