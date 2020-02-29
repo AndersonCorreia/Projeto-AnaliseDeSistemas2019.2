@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\DB\ClienteDAO;
+use App\DB\EmpresaDAO;
 
 require_once __DIR__."/../../../resources/views/util/layoutUtil.php";
 
@@ -12,7 +12,7 @@ class CadastroController extends Controller{
 
     public function Construct(){
         parent:: Construct();
-        $DAO = new ClienteDAO();
+        $DAO = new EmpresaDAO();
     }
 
     public function criar(){

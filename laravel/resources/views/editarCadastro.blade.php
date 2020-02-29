@@ -12,7 +12,7 @@
 <form class="col-xl-12 col-12 mx-sm-auto mt-sm-1" action="" method="POST" enctype="multipart/form-data">
 {{csrf_field()}}
     <fieldset>
-        <div class="form-row col-msm">   
+        < class="form-row col-msm">   
             <div class="form-group col-sm-12">
                 <span class="col-1 p-0">Razão Social</span>
                 <input type="hidden" name="_method" value="put">
@@ -83,6 +83,7 @@
                 <input class="form-control" maxlength="6" type="text" name="Número" placeholder="Nº"
                 value="{{isset($registro['numero']) ? $registro['numero'] : ''}}" required>
             </div>
+            <input type="hidden" value="{{ $registro['ID'] ?? 99 }}">
         </div>
     </fieldset>
         <div class="input-group-append">
