@@ -1,5 +1,5 @@
 @include('layouts._includes.top')
-
+@section('title', 'Entrar')
 @section('conteudo')
 
 <div class="text-center mx-auto col-md-10">

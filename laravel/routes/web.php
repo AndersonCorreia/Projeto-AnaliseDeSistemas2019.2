@@ -22,7 +22,7 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get("/editar", "CadastroController@telaEditar")->name("editarCadastro.show"); //rota temporária
 
-Route::get('/entrar', "UserController@telaEntrar")->name('entrar');
+Route::get('/entrar', "UserController@telaEntrar")->name('telaEntrar');
 Route::post('/entrar','UserController@login')->name('login');
 Route::get("/logout", 'UserController@logout')->name('logout');
 
