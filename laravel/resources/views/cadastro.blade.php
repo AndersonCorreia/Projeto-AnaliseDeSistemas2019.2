@@ -113,10 +113,10 @@
             
             
         </div>
-    </fieldset>
+    
         <div class="input-group-append">
-            <button type="submit" class="btn btn-primary mr-2">Cadastrar Cliente</button>
-            <button type="button" class="btn btn-danger">Cancelar</button> </a>
+        <button id="submit" type="submit" class="btn btn-primary mr-2">Cadastrar Cliente</button>
+            <a href={{route('inicio')}}></a><button type="button" class="btn btn-danger">Cancelar</button> </a>
         </div>
     </fieldset>
 </form>
