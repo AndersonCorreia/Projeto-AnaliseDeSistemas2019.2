@@ -1,4 +1,4 @@
-@extends('layouts.templateGeralTelasUsuarios')
+@extends('layouts.templateGeral')
 
 @section('title', 'Empresas Cadastradas')
 
@@ -9,6 +9,7 @@
     <div class="form-group col-12 m-0 p-0">
         <h5>Resumo de Cadastros de Clientes</h5>
     </div>
+    @if (($registros ?? false))
     @foreach($registros as $registro)
     <div class= "row mt-3 mx-0 p-1 scorpius-border-shadow border-top border-shadow">
         <div class="row col-12 col-md-11 my-1" >
@@ -37,6 +38,7 @@
         </div>
     </div>
     @endforeach
+    @endif
 </div>
 
 <style>

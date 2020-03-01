@@ -56,7 +56,7 @@
 
             <div class="form-group col-sm-2">
                 <span>Matriz</span>
-                <input class="form-control" type="text" name="matriz" maxlength="40" placeholder="Matriz" 
+                <input class="form-control" type="text" name="matriz" maxlength="40" placeholder="Matriz da empresa" 
                 value="" title="Matriz da empresa" required>
             </div>
 

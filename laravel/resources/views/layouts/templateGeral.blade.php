@@ -2,7 +2,7 @@
 
 <div class= "tela  bg-light">
     <div id="menuLateral" class= " border-right border-info">
-        <img id="logo" class = "px-md-3 px-2 pt-3 mb-3" src="" height=auto  width=100%> 
+        <img id="logo" class = "px-md-3 px-2 pt-3 mb-3" src="{{ public_path('img\capamenu.jpg') }}">
         <div class="h-75 overflow-auto">
             <nav class="p-lg-2 pr-1 py-5 my-5 navbar-left flex-column">
                 @foreach ($itensMenu as $key => $item){{--Para adicionar os itens do menu dinamicamente --}}
