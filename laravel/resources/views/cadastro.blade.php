@@ -10,34 +10,36 @@
     <fieldset>
         <div class="form-row col-msm">
         <!-- Cadastro Pessoa Fisica -->
-        <div class="form-group col-sm-7"><span color="red"><p>Os campos com * são obrigatórios.</p></span></div>
+        <div class="form-group col-sm-7">
+            <span class=" text-danger ">Os campos com * são obrigatórios.</span>
+        </div>
             <div class="form-group col-sm-7">
-                <span class="col-1 p-0">Razão Social </span><span color="red">*</span>
+                <span class="col-1 p-0">Razão Social </span><span class=" text-danger ">*</span>
                 <input id="razaoSocial"  class="form-control" type="text" maxlength="40" name="razaoSocial" placeholder="Insira a razão social da empresa" 
                 value="{{ $registro['razaoSocial'] ?? ' ' }}"  title="Razão Social" required autofocus>
             </div>
 
             <div class="form-group col-sm-2">
-                <span>CEP </span><span color="red">*</span>
+                <span>CEP </span><span class=" text-danger ">*</span>
                 <input class="form-control" maxlength="9" type="text" name="CEP" placeholder="99999-999" OnKeyPress="formatar('#####-###', this)" pattern="[0-9]{5}-[0-9]{3}$" 
                 value="{{ $registro['CEP'] ?? ' ' }}" required>
             </div>
 
             <div class="form-group col-sm-3">
-                <span>Telefone</span><span color="red">*</span>
+                <span>Telefone</span><span class=" text-danger ">*</span>
                 <input class="form-control" maxlength="14" type="text" name="telefone" placeholder="(99)99999-9999" OnKeyPress="formatar('##-#####-####', this)" pattern="\([0-9]{2}\)[0-9]{4,6}[0-9]{3,4}$" 
                 value="{{ $registro['telefone'] ?? ' ' }}" required>
             </div>
 
 
             <div class="form-group col-sm-8">    
-                <span>Nome Fantasia </span><span color="red">*</span>
+                <span>Nome Fantasia </span><span class=" text-danger ">*</span>
                 <input class="form-control"  type="text" maxlength="40" name="nomeFantasia" title="Nome Fantasia" placeholder="Insira o nome fantasia da empresa"  
                 value="{{ $registro['nomeFantasia'] ?? ' ' }}"  required>
             </div>
             
             <div class="form-group col-sm-4">
-                <span>CNPJ </span><span color="red">*</span>
+                <span>CNPJ </span><span class=" text-danger ">*</span>
                 <input class="form-control" type="text" maxlength="18" name="CNPJ" placeholder="99.999.999/9999-99" OnKeyPress="formatar('##.###.###/####-##', this)"
                 value="{{ $registro['CNPJ'] ?? ' ' }}"  pattern="[0-9]{2}.[0-9]{3}.[0-9]{3}/[0-9]{4}-[0-9]{2}$" 
                 title="Insira o CNPJ. Digite apenas números no formato xx.xxx.xxx/xxxx-xx" required>
@@ -53,7 +55,7 @@
             </div>
 
             <div class="form-group col-sm-2">    
-                <span>Inscrição Estadual </span><span color="red">*</span>
+                <span>Inscrição Estadual </span><span class=" text-danger ">*</span>
                 <input class="form-control"  type="text" maxlength="9" name="inscricaoEstadual" placeholder="999999-99" OnKeyPress="formatar('######-##', this)" pattern="[0-9]{6}-[0-9]{2}$" 
                 value="{{ $registro['inscricaoEstadual'] ?? ' ' }}" title="Insira a Inscrição Estadual. Digite apenas números no formato xxxxxx-xx"required>
             </div>
@@ -65,7 +67,7 @@
             </div>
 
             <div class="form-group col-sm-3">
-                <span>Estado</span><span color="red">*</span>
+                <span>Estado</span><span class=" text-danger ">*</span>
                 <select id="estado" name="estado"  class="custom-select" value="{{ $registro['estado'] ?? 'BA' }}"  required>
                 <option value="AC">Acre</option>
                 <option value="AL">Alagoas</option>
@@ -98,19 +100,19 @@
             </div>
 
             <div class="form-group col-sm-4">
-                <span>Cidade </span><span color="red">*</span>
+                <span>Cidade </span><span class=" text-danger ">*</span>
                 <input class="form-control"  maxlength="40" type="text" name="cidade" placeholder="Insira a cidade"
                 value="{{ $registro['cidade'] ?? ' ' }}" required>
             </div>
 
             <div class="form-group col-sm-4">
-                <span>Endereço </span><span color="red">*</span>
+                <span>Endereço </span><span class=" text-danger ">*</span>
                 <input class="form-control" maxlength="50" type="text" name="endereco" placeholder="Insira o endereço"
                 value="{{ $registro['endereco'] ?? ' ' }}" required>
             </div>
 
             <div class="form-group col-sm-1">
-                <span>Número </span><span color="red">*</span>
+                <span>Número </span><span class=" text-danger ">*</span>
                 <input class="form-control" maxlength="6" type="text" name="numero" placeholder="Nº"
                 value="{{ $registro['numero'] ?? ' ' }}" required>
             </div>
