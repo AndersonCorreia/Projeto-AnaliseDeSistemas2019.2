@@ -38,8 +38,8 @@ class CadastroController extends Controller{
 
         $variaveis = [
             'itensMenu' => getMenuLinks(),
-            'paginaAtual' => "Cadastros Vinculados",
-            //'empresas' => $DAO->SELECT_ALL()
+            'paginaAtual' => "Editar ou excluir cadastro de cliente",
+            'registros' => $DAO->SELECT_ALL()
         ];
 
         return view("cadastrosVinculados",$variaveis);
@@ -51,12 +51,12 @@ class CadastroController extends Controller{
         return redirect()->route("editarCadastro.show");
     }
 
-    public function telaEditar(){
+    public function telaEditar(int $ID){
 
         $variaveis = [
             'itensMenu' => getMenuLinks(),
             'paginaAtual' => "Editar ou excluir cadastro de cliente",
-            //'empresas' => $DAO->SELECT_ALL()
+            'registro' => $DAO->SELECTbyID($ID)
         ];
 
         return view("editarCadastro",$variaveis);
