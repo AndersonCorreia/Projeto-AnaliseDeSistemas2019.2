@@ -23,16 +23,57 @@
                     <div class="col-12 p-0">{{$registro['razaoSocial']}}</div>
                 </div>
                 <div class= "col-8 col-md-4">
-                    <div class="col-12 p-0 my-1 font-weight-bold">Endereço</div>
-                    <div class="col-12 p-0">{{$registro['endereco']}}</div>
+                    <div class="col-12 p-0 my-1 font-weight-bold">Inscrição Estadual</div>
+                    <div class="col-12 p-0">{{$registro['inscricaoEstadual']}}</div>
                 </div>
                 <div class= "col-4 col-md-2 m-0">
                     <div class="col-12 p-0 my-1 my-md-0 font-weight-bold">CNPJ</div>
                     <div class="col-12 p-0">{{$registro['CNPJ']}}</div>
                 </div>
             </div>
+
+            <div class="row col-12">
+                <div class= "col-8 col-5 col-md-3">
+                    <div class="col-12 p-0 my-1 font-weight-bold">Endereço</div>
+                    <div class="col-12 p-0">{{$registro['endereco']}}</div>
+                </div>
+                <div class= "col-4 col-md-3">
+                    <div class="col-12 p-0 my-1 font-weight-bold">Cidade</div>
+                    <div class="col-12 p-0">{{$registro['cidade']}}</div>
+                </div>
+                <div class= "col-8 col-md-4">
+                    <div class="col-12 p-0 my-1 my-md-0 font-weight-bold">Estado</div>
+                    <div class="col-12 p-0">{{$registro['estado']}}</div>
+                </div>
+                <div class= "col-4 col-md-2 m-0">
+                    <div class="col-12 p-0 my-1 font-weight-bold">Número</div>
+                    <div class="col-12 p-0">{{$registro['numero']}}</div>
+                </div>
+            </div>
+ 
+
+            <div class="row col-12">
+                <div class= "col-8 col-5 col-md-3">
+                    <div class="col-12 p-0 my-1 font-weight-bold">CEP</div>
+                    <div class="col-12 p-0">{{$registro['CEP']}}</div>
+                </div>
+                <div class= "col-4 col-md-3">
+                    <div class="col-12 p-0 my-1 font-weight-bold">Matriz</div>
+                    <div class="col-12 p-0">{{$registro['matriz']}}</div>
+                </div>
+                <div class= "col-8 col-md-4">
+                    <div class="col-12 p-0 my-1 font-weight-bold">Telefone</div>
+                    <div class="col-12 p-0">{{$registro['telefone']}}</div>
+                </div>
+                <div class= "col-4 col-md-2 m-0">
+                    <div class="col-12 p-0 my-1 my-md-0 font-weight-bold">Site</div>
+                    <div class="col-12 p-0">{{$registro['site']}}</div>
+                </div>
+            </div>
+
+
         </div>
-        <div class="col-11 col-md-1 mx-0 my-1 p-0 text-right">
+        <div class="col-11 col-md-1 mx-0 pt-5 p-0 text-right">
             <a class="btn col-3 col-md-12 btn-primary btn-sm p-1" href="{{route('editarCadastro.show', $registro['ID'])}}">Atualizar</a>
             <a class="btn col-3 col-md-12 btn-danger btn-sm p-1" href="{{route('excluirCadastro.post', $registro['ID'])}}">Deletar</a>
         </div>

@@ -47,7 +47,7 @@
 
             <div class="form-group col-sm-8">
                 <span>Site do Cliente</span>
-                <input class="form-control"  type="text" maxlength="11" name="site" placeholder="Insira o endereço do site do cliente" 
+                <input class="form-control"  type="text" maxlength="50" name="site" placeholder="Insira o endereço do site do cliente" 
                 value="{{isset($registro['site']) ? $registro['site'] : ''}}" title="Site do Cliente" required>
             </div>
 

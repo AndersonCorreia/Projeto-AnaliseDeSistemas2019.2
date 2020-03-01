@@ -23,7 +23,7 @@
 
             <div class="form-group col-sm-3">
                 <span>Telefone</span>
-                <input class="form-control" maxlength="14" type="text" name="telefone" placeholder="(99)999999999" pattern="\([0-9]{2}\)[0-9]{4,6}[0-9]{3,4}$" 
+                <input class="form-control" maxlength="14" type="text" name="telefone" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{4,6}[0-9]{3,4}$" 
                 value="" required>
             </div>
 
@@ -43,7 +43,7 @@
 
             <div class="form-group col-sm-8">
                 <span>Site do Cliente</span>
-                <input class="form-control"  type="text" maxlength="11" name="site" placeholder="Insira o endereço do site do cliente" 
+                <input class="form-control"  type="text" maxlength="50" name="site" placeholder="Insira o endereço do site do cliente" 
                 value=""  title="Site do Cliente" required>
             </div>
 
