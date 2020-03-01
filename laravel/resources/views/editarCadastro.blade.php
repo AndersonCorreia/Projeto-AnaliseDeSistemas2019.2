@@ -15,7 +15,6 @@
         <div class="form-row col-msm">   
             <div class="form-group col-sm-7">
                 <span class="col-1 p-0">Razão Social</span>
-                <input type="hidden" name="_method" value="put">
                 <input id="nomeInst"  class="form-control" type="text" maxlength="40" name="razaoSocial" placeholder="Insira a razão social da empresa" 
                 value="{{isset($registro['razaoSocial']) ? $registro['razaoSocial'] : ''}}" title="Razão Social" required autofocus>
             </div>

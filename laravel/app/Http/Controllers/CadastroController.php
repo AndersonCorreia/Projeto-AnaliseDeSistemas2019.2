@@ -19,13 +19,13 @@ class CadastroController extends Controller{
     public function criar(Request $request){
 
         $this->DAO->INSERT($request->input() );
-        return redirect()->route("editarCadastro.show");
+        return redirect()->route("cadastrosVinculados.show");
     }
 
     public function editar(Request $request){
 
         $this->DAO->UPDATE($request->input() );
-        return redirect()->route("editarCadastro.show");
+        return redirect()->route("cadastrosVinculados.show");
     }
 
     public function cadastrosVinculados(Request $request){

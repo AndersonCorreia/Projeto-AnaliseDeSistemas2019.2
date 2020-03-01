@@ -11,8 +11,7 @@
         <!-- Cadastro Pessoa Fisica -->
         <div class="form-group col-sm-7">
                 <span class="col-1 p-0">Razão Social</span>
-                
-                <input id="nomeInst"  class="form-control" type="text" maxlength="40" name="razaoSocial" placeholder="Insira a razão social da empresa" 
+                <input id="razaoSocial"  class="form-control" type="text" maxlength="40" name="razaoSocial" placeholder="Insira a razão social da empresa" 
                 value=""  title="Razão Social" required autofocus>
             </div>
 
@@ -24,7 +23,7 @@
 
             <div class="form-group col-sm-3">
                 <span>Telefone</span>
-                <input class="form-control" maxlength="14" type="text" name="Telefone" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" 
+                <input class="form-control" maxlength="14" type="text" name="telefone" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" 
                 value="" required>
             </div>
 
@@ -62,7 +61,7 @@
 
             <div class="form-group col-sm-3">
                 <span>Estado</span>    
-                <select id="estado" name="Estado"  class="custom-select" value=""  required>
+                <select id="estado" name="estado"  class="custom-select" value=""  required>
                 <option value="AC">Acre</option>
                 <option value="AL">Alagoas</option>
                 <option value="AP">Amapá</option>
@@ -95,19 +94,19 @@
 
             <div class="form-group col-sm-4">
                 <span>Cidade</span>
-                <input class="form-control"  maxlength="40" type="text" name="Cidade" placeholder="Insira a cidade"
+                <input class="form-control"  maxlength="40" type="text" name="cidade" placeholder="Insira a cidade"
                 value="" required>
             </div>
 
             <div class="form-group col-sm-4">
                 <span>Endereço</span>
-                <input class="form-control" maxlength="50" type="text" name="Endereço" placeholder="Insira o endereço"
+                <input class="form-control" maxlength="50" type="text" name="endereco" placeholder="Insira o endereço"
                 value="" required>
             </div>
 
             <div class="form-group col-sm-1">
                 <span>Número</span>
-                <input class="form-control" maxlength="6" type="text" name="Número" placeholder="Nº"
+                <input class="form-control" maxlength="6" type="text" name="numero" placeholder="Nº"
                 value="" required>
             </div>
             
@@ -116,7 +115,7 @@
     
         <div class="input-group-append">
         <button id="submit" type="submit" class="btn btn-primary mr-2">Cadastrar Cliente</button>
-            <a href={{route('inicio')}}></a><button type="button" class="btn btn-danger">Cancelar</button> </a>
+            <a href={{route('cadastrosVinculados.show')}}></a><button type="button" class="btn btn-danger">Cancelar</button> </a>
         </div>
     </fieldset>
 </form>
