@@ -19,12 +19,14 @@ Route::middleware(['auth'])->group(function () {
     Route::post("/cadastro/editar", "CadastroController@editar")->name("editarCadastro.post");
 
     Route::get("/cadastro/excluir/{ID}", "CadastroController@excluir")->name("excluirCadastro.post");
+    //Route::get("/cadastrosVinculados", "CadastroController@telaCadastrosVinculados")->name("cadastrosVinculados.show"); //rota temporária
 
 });
 
 //Route::get("/editar", "CadastroController@telaEditar")->name("editarCadastro.show"); //rota temporária
+//Route::get("/cadastrosVinculados", "CadastroController@telaCadastrosVinculados")->name("cadastrosVinculados.show"); //rota temporária
 
-Route::get('/entrar', "UserController@telaEntrar")->name('entrar');
+Route::get('/entrar', "UserController@telaEntrar")->name('telaEntrar');
 Route::post('/entrar','UserController@login')->name('login');
 Route::get('/entrar/erro', 'UserController@telaEntrarError')->name('loginError.show');
 Route::get("/logout", 'UserController@logout')->name('logout');
