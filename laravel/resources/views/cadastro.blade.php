@@ -10,9 +10,9 @@
     <fieldset>
         <div class="form-row col-msm">
         <!-- Cadastro Pessoa Fisica -->
-        <div class="form-group col-sm-7">
-            <span class=" text-danger ">Os campos com * são obrigatórios.</span>
-        </div>
+            <div class="form-group col-sm-7">
+                <span class=" text-danger ">Os campos com * são obrigatórios.</span>
+            </div>
             <div class="form-group col-sm-7">
                 <span class="col-1 p-0">Razão Social </span><span class=" text-danger ">*</span>
                 <input id="razaoSocial"  class="form-control" type="text" maxlength="40" name="razaoSocial" placeholder="Insira a razão social da empresa" 
@@ -26,7 +26,7 @@
             </div>
 
             <div class="form-group col-sm-3">
-                <span>Telefone</span><span class=" text-danger ">*</span>
+                <span>Telefone </span><span class=" text-danger ">*</span>
                 <input class="form-control" maxlength="14" type="text" name="telefone" placeholder="(99)99999-9999" OnKeyPress="formatar('##-#####-####', this)" pattern="\([0-9]{2}\)[0-9]{4,6}[0-9]{3,4}$" 
                 value="{{ $registro['telefone'] ?? ' ' }}" required>
             </div>
@@ -67,7 +67,7 @@
             </div>
 
             <div class="form-group col-sm-3">
-                <span>Estado</span><span class=" text-danger ">*</span>
+                <span>Estado </span><span class=" text-danger ">*</span>
                 <select id="estado" name="estado"  class="custom-select" value="{{ $registro['estado'] ?? 'BA' }}"  required>
                 <option value="AC">Acre</option>
                 <option value="AL">Alagoas</option>
@@ -121,7 +121,7 @@
         </div>
     
         <div class="input-group-append">
-        <button id="submit" type="submit" class="btn btn-primary mr-2">Cadastrar Cliente</button>
+            <button id="submit" type="submit" class="btn btn-primary mr-2">Cadastrar Cliente</button>
             <a href={{route('cadastrosVinculados.show')}}><button type="button" class="btn btn-danger">Cancelar</button> </a>
         </div>
     </fieldset>
