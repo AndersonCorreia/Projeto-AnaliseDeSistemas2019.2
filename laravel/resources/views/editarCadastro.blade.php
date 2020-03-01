@@ -27,7 +27,7 @@
 
             <div class="form-group col-sm-3">
                 <span>Telefone</span>
-                <input class="form-control" maxlength="14" type="text" name="telefone" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$"
+                <input class="form-control" maxlength="14" type="text" name="telefone" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{4,6}[0-9]{3,4}$"
                 value="{{isset($registro['telefone']) ? $registro['telefone'] : ''}}" required>
             </div>
 
@@ -65,7 +65,7 @@
 
             <div class="form-group col-sm-3">
                 <span>Estado</span>    
-                <select id="estado" name="Estado"  class="custom-select" value="{{isset($registro['estado']) ? $registro['estado'] : 'AL'}}" required>
+                <select id="estado" name="estado"  class="custom-select" value="{{isset($registro['estado']) ? $registro['estado'] : 'AL'}}" required>
                 <option value="AC">Acre</option>
                 <option value="AL">Alagoas</option>
                 <option value="AP">Amapá</option>
@@ -104,7 +104,7 @@
 
             <div class="form-group col-sm-4">
                 <span>Endereço</span>
-                <input class="form-control" maxlength="50" type="text" name="endereço" placeholder="Insira o endereço"
+                <input class="form-control" maxlength="50" type="text" name="endereco" placeholder="Insira o endereço"
                 value="{{isset($registro['endereco']) ? $registro['endereco'] : ''}}" required>
             </div>
 
@@ -118,7 +118,7 @@
         </div>
     </fieldset>
         <div class="input-group-append">
-            <button type="submit" class="btn btn-success mr-2">Atualizar Dados</button>
+            <a href={{route("editarCadastro.post")}}><button type="submit" class="btn btn-success mr-2">Atualizar Dados</button></a>
             <a href={{route("excluirCadastro.post",  ($registro['ID'] ?? '99')) }}><button type="button" class="btn btn-danger">Excluir Cadastro</button> </a>
             <a href={{route("cadastrosVinculados.show")}}><button type="button" class="btn btn-primary mx-2">Cancelar</button> </a>
         </div>
