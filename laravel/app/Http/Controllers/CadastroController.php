@@ -16,19 +16,19 @@ class CadastroController extends Controller{
         $this->DAO = new EmpresaDAO();
     }
 
-    public function criar(){
+    public function criar(Request $request){
 
         $this->DAO->INSERT($request->input() );
         return redirect()->route("editarCadastro.show");
     }
 
-    public function editar(){
+    public function editar(Request $request){
 
         $this->DAO->UPDATE($request->input() );
         return redirect()->route("editarCadastro.show");
     }
 
-    public function cadastrosVinculados(){
+    public function cadastrosVinculados(Request $request){
 
         $this->DAO->UPDATE($request->input() );
         return redirect()->route("cadastrosVinculados.show");
