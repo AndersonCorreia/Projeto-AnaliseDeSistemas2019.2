@@ -31,14 +31,14 @@ class UserDAO extends \App\DB\interfaces\DataAccessObject
      */
     function UserLogin(string $user, string $senha): array{
         $select = "ID";
-        $sql = "SELECT $select FROM $join WHERE usuario = ? AND senha = ?";
+        $sql = "SELECT $select FROM usuario WHERE usuario = ? AND senha = ?";
         $stmt = $this->dataBase->prepare($sql);
         $stmt->bind_param("ss", $user, $senha);
         $stmt->execute();
         $row = $stmt->get_result()->fetch_assoc();
 
         if ($row == []) {
-            throw new \Exception("Usuario não encontrado ou senha errada");
+            throw new \App\Exceptions\UsuarioNaoEncontradoException();
         }
 
         return $row;

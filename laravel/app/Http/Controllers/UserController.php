@@ -2,15 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\DB\UserDAO;
 
 require_once __DIR__."/../../../resources/views/util/layoutUtil.php";
 
 class UserController extends Controller{   
 
+    //retorna a tela de entrar
     public function telaEntrar()
     {
-        return view('login');
+        return view('login', [ 'loginError' => false]);
+    }
+    //retorna a tela de entrar com o aviso de erro no login
+    public function telaEntrarError()
+    {
+        return view('login', [ 'loginError' => true]);
     }
 
     /**

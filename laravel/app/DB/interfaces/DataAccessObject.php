@@ -43,7 +43,7 @@ abstract class DataAccessObject {
     }
 
     public function SELECTbyID(int $id){
-        $sql = "SELECT * FROM $this->table WHERE id = ?";
+        $sql = "SELECT * FROM $this->table WHERE ID = ?";
         $stmt = $this->dataBase->prepare($sql);
         $stmt->bind_param("i", $id);
         $stmt->execute();
@@ -63,7 +63,7 @@ abstract class DataAccessObject {
      * @param [type] $object o objeto correspondente aos dados que devem ser inseridos no banco
      * @return boolean true se a query for realizada com sucesso, false se não for concluida com sucesso
      */
-    abstract public function INSERT(object $object): bool;
+    abstract public function INSERT(array $object): bool;
 
     /**
      * Realiza uma ou mais querys de UPDATE no banco de dados, para alterar
@@ -72,7 +72,7 @@ abstract class DataAccessObject {
      * @param [type] $object o objeto correspondente aos dados que devem ser atualizados no banco
      * @return boolean true se a query for realizada com sucesso, false se não for concluida com sucesso
      */
-    abstract public function UPDATE(object $object): bool;
+    abstract public function UPDATE(array $object): bool;
     
     /**
      * Deletar um registro do banco com base no ID
@@ -80,7 +80,7 @@ abstract class DataAccessObject {
      * @return boolean true caso operação ocorra com sucesso, caso contrário retorna false;
      */
     public function DELETEbyID(int $id){
-        $sql = "DELETE FROM $this->table WHERE id = ?";
+        $sql = "DELETE FROM $this->table WHERE ID = ?";
         $stmt = $this->dataBase->prepare($sql);
         $result = $stmt->bind_param("i",$id);
         return $stmt->execute();

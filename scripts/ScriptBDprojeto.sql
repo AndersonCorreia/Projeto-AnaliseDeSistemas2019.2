@@ -15,7 +15,7 @@ USE `projeto` ;
 CREATE TABLE IF NOT EXISTS `projeto`.`usuario` (
   `ID` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `usuario` VARCHAR(40) NOT NULL,
-  `senha` VARCHAR(20) NOT NULL
+  `senha` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE INDEX `usuario_UNIQUE` (`usuario` ASC))
 ENGINE = InnoDB;
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `projeto`.`empresa` (
   `cidade` VARCHAR(40) NOT NULL,
   `endereco` VARCHAR(50) NOT NULL,
   `numero` VARCHAR(6) NOT NULL,
-  `cep` CHAR(9) NOT NULL,
+  `CEP` CHAR(9) NOT NULL,
   `telefone` VARCHAR(15) NOT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE INDEX `CNPJ_UNIQUE` (`CNPJ` ASC))
