@@ -38,8 +38,8 @@ class CadastroController extends Controller{
 
         $variaveis = [
             'itensMenu' => getMenuLinks(),
-            'paginaAtual' => "Cadastros Vinculados",
-            
+            'paginaAtual' => "Editar ou excluir cadastro de cliente",
+            'registros' => $DAO->SELECT_ALL()
         ];
 
         return view("cadastrosVinculados",$variaveis);
@@ -56,12 +56,12 @@ class CadastroController extends Controller{
         return redirect()->route("editarCadastro.show");
     }
 
-    public function telaEditar(){
+    public function telaEditar(int $ID){
 
         $variaveis = [
             'itensMenu' => getMenuLinks(),
             'paginaAtual' => "Editar ou excluir cadastro de cliente",
-            //'empresas' => $DAO->SELECT_ALL()
+            'registro' => $DAO->SELECTbyID($ID)
         ];
 
         return view("editarCadastro",$variaveis);
@@ -76,5 +76,40 @@ class CadastroController extends Controller{
 
         return view("cadastro",$variaveis);
     }
+
+
+    public function editarCadastro(Request $req, $id) {
+        $DAO = new ClienteDAO();
+        $razaoSocial = $_POST['razaoSocial'];
+        $nomeFantasia = $_POST['nomeFantasia'];
+        $cnpj = $_POST['CNPJ'];
+        $site = $_POST['site'];
+        $inscricaoEstadual = $_POST['inscricaoEstadual'];
+        $matriz = $_POST['mamtriz'];
+        $estado = $_POST['estado'];
+        $cidade = $_POST['cidade'];
+        $endereco = $_POST['endereco'];
+        $numero = $_POST['numero'];
+  
+        //armazena na classe da Model
+        $cliente = new Cliente( 
+            $razaoSocial,
+            $nomeFantasia,
+            $cnpj,
+            $site,
+            $inscricaoEstadual,
+            $matriz,
+            $estado,
+            $cidade,
+            $endereco,
+            $numero
+        );       
+        //altera no banco
+        $DAO->UPDATE($cliente);
+        return redirect()->route('cadastrosVinculados.show');
+    
+    }
+
+
 
 }

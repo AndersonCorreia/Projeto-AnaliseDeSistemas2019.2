@@ -33,8 +33,8 @@
             </div>
         </div>
         <div class="col-11 col-md-1 mx-0 my-1 p-0 text-right">
-            <a class="btn col-3 col-md-12 btn-primary btn-sm p-1" href="{{route('user.cadastro.editar', $registro['ID'])}}">Atualizar</a>
-            <a class="btn col-3 col-md-12 btn-danger btn-sm p-1" href="{{route('user.cadastro.deletar', $registro['ID'])}}">Deletar</a>
+            <a class="btn col-3 col-md-12 btn-primary btn-sm p-1" href="{{route('editarCadastro.show', $registro['ID'])}}">Atualizar</a>
+            <a class="btn col-3 col-md-12 btn-danger btn-sm p-1" href="{{route('excluirCadastro.post', $registro['ID'])}}">Deletar</a>
         </div>
     </div>
     @endforeach
