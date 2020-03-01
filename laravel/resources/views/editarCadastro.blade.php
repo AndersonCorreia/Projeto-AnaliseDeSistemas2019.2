@@ -115,12 +115,12 @@
                 value="{{isset($registro['numero']) ? $registro['numero'] : ''}}" required>
             </div>
             
-            <input type="hidden" value="{{ $registro['ID'] ?? 99 }}">
+            <input type="hidden" value="{{ $registro['ID'] ?? '99' }}">
         </div>
     </fieldset>
         <div class="input-group-append">
             <button type="submit" class="btn btn-success mr-2">Atualizar Dados</button>
-            <a href={{route("excluirCadastro.post")}}><button type="button" class="btn btn-danger">Excluir Cadastro</button> </a>
+            <a href={{route("excluirCadastro.post",  ($registro['ID'] ?? '99')) }}><button type="button" class="btn btn-danger">Excluir Cadastro</button> </a>
             <a href={{route("cadastro.show")}}><button type="button" class="btn btn-primary mx-2">Cancelar</button> </a>
         </div>
     </form>
