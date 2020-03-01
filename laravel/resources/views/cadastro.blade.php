@@ -1,7 +1,8 @@
 @extends('layouts.templateGeral')
 
 @section('title', 'Cadastro do Cliente')
-
+<script src="SpryValidationTextField.js" type="text/javascript"></script>
+<link href="SpryValidationTextField.css" rel="stylesheet" type="text/css" />
 @section('conteudo')
 
 <form class="col-lg-12 col-12 mx-sm-auto mt-sm-1" method="POST" action="{{route('cadastro.post')}}">
@@ -16,14 +17,13 @@
             </div>
 
             <div class="form-group col-sm-2">
-                <span>CEP</span>
-                <input class="form-control" maxlength="9" type="text" name="CEP" placeholder="99999-999" pattern="[0-9]{5}-[0-9]{3}$" 
-                value="" required>
+                <span id="sprytextfield1">CEP</span>
+                <input class="form-control" maxlength="9" type="text" name="CEP" placeholder="99999-999" pattern="[0-9]{5}-[0-9]{3}$" OnKeyPress="formatar('#####-###', this)">
             </div>
 
             <div class="form-group col-sm-3">
                 <span>Telefone</span>
-                <input class="form-control" maxlength="14" type="text" name="telefone" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{4,6}[0-9]{3,4}$" 
+                <input class="form-control" maxlength="13" type="text" name="telefone" placeholder="(99)99999-9999" OnKeyPress="formatar('(##)#####-####', this)" pattern="\([0-9]{2}\)[0-9]{4,6}[0-9]{3,4}$" 
                 value="" required>
             </div>
 
@@ -36,7 +36,7 @@
             
             <div class="form-group col-sm-4">
                 <span>CNPJ</span>
-                <input class="form-control" type="text" maxlength="18" name="CNPJ" placeholder="99.999.999/9999-99" 
+                <input class="form-control" type="text" maxlength="18" name="CNPJ" placeholder="99.999.999/9999-99" OnKeyPress="formatar('##.###.###/####-##', this)"
                 value=""  pattern="[0-9]{2}.[0-9]{3}.[0-9]{3}/[0-9]{4}-[0-9]{2}$" 
                 title="Insira o CNPJ. Digite apenas números no formato xx.xxx.xxx/xxxx-xx" required>
             </div> 
@@ -49,7 +49,7 @@
 
             <div class="form-group col-sm-2">    
                 <span>Inscrição Estadual</span>
-                <input class="form-control"  type="text" maxlength="9" name="inscricaoEstadual" placeholder="999999-99" pattern="[0-9]{6}-[0-9]{2}$" 
+                <input class="form-control"  type="text" maxlength="9" name="inscricaoEstadual" placeholder="999999-99" OnKeyPress="formatar('######-##', this)" pattern="[0-9]{6}-[0-9]{2}$" 
                 value="" title="Insira a Inscrição Estadual. Digite apenas números."required>
             </div>
 
@@ -120,4 +120,18 @@
     </fieldset>
 </form>
 
+
+<script>
+function formatar(mascara, documento){
+  var i = documento.value.length;
+  var saida = mascara.substring(0,1);
+  var texto = mascara.substring(i)
+  
+  if (texto.substring(0,1) != saida){
+            documento.value += texto.substring(0,1);
+  }
+  
+}
+</script>
 @endsection
+
