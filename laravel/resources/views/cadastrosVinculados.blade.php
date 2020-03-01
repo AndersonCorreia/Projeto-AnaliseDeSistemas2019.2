@@ -1,4 +1,4 @@
-@extends('layouts.templateGeralTelasUsuarios')
+@extends('layouts.templateGeral')
 
 @section('title', 'Empresas Cadastradas')
 
