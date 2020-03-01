@@ -26,7 +26,7 @@
 
             <div class="form-group col-sm-3">
                 <span>Telefone</span><span class=" text-danger "> *</span>
-                <input class="form-control" maxlength="13" type="text" name="telefone" placeholder="99-99999-9999" OnKeyPress="formatar('##-#####-####', this)" pattern="[0-9]{2}-[0-9]{4,6}-[0-9]{3,4}$" 
+                <input class="form-control" maxlength="13" type="text" name="telefone" placeholder="99-99999-9999" OnKeyUP="formatar('##-#####-####', this)" pattern="[0-9]{2}-[0-9]{4,6}-[0-9]{3,4}$" 
                 value="{{ $registro['telefone'] ?? '' }}" required>
             </div>
 
