@@ -1,4 +1,5 @@
 @include('layouts._includes.top')
+<div class="pt-4">
 @section('title', 'Entrar')
 
 <div id="login">
@@ -22,8 +23,8 @@
             
             <!-- E-mail -->
             <div class="form-group">
-                <label for="userCadastro">Usuario</label>
-                <input class="form-control" placeholder="exemplo" id="userCadastro" name="usuario" type="text" required>
+                <label for="userCadastro">Usuário</label>
+                <input class="form-control" placeholder="Insira o nome de usuário" id="userCadastro" name="usuario" type="text" required>
             </div>
             <!-- Senha -->
             <div class="form-group">
@@ -31,7 +32,7 @@
                 <input minlength="4" maxlength="20" type="password" class="form-control" id="senha" name="senha" required>
             </div>
 
-            <button type="submit" class="btn btn-success btn-lg btn-block" style="font-size:15px">Entrar</button>
+            <button type="submit" class="btn btn-primary btn-lg btn-block" style="font-size:15px">Entrar</button>
         </form>
     </div>
 </div>

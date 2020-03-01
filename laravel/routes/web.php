@@ -18,8 +18,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get("/cadastro/editar", "CadastroController@telaEditar")->name("editarCadastro.show");
     Route::post("/cadastro/editar", "CadastroController@editar")->name("editarCadastro.post");
 
-    Route::get("/cadastro/excluir/{ID}", "CadastroController@excluir")->name("excluirCadastro.post");
-    //Route::get("/cadastrosVinculados", "CadastroController@telaCadastrosVinculados")->name("cadastrosVinculados.show"); //rota temporária
+    Route::get("/cadastro/excluir/", "CadastroController@excluir")->name("excluirCadastro.post");
+    //Route::get("/cadastrosVinculados", "CadastroController@editarCadastro")->name("cadastrosVinculados.show"); //rota temporária
 
 });
 

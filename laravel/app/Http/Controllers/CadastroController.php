@@ -101,7 +101,7 @@ class CadastroController extends Controller{
         );       
         //altera no banco
         $DAO->UPDATE($cliente);
-        return redirect()->route('cadastro.show');
+        return redirect()->route('cadastrosVinculados.show');
     
     }
 
