@@ -24,7 +24,7 @@
 
             <div class="form-group col-sm-3">
                 <span>Telefone</span>
-                <input class="form-control" maxlength="14" type="text" name="Telefone" placeholder="(99)99999-9999" pattern="([0-9]){2}[0-9]{5}-[0-9]{4}$" 
+                <input class="form-control" maxlength="14" type="text" name="Telefone" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" 
                 value="" required>
             </div>
 

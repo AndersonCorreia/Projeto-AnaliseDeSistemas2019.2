@@ -28,6 +28,23 @@ class CadastroController extends Controller{
         return redirect()->route("editarCadastro.show");
     }
 
+    public function cadastrosVinculados(){
+
+        $DAO->UPDATE($request->input() );
+        return redirect()->route("cadastrosVinculados.show");
+    }
+
+    public function telaCadastrosVinculados(){
+
+        $variaveis = [
+            'itensMenu' => getMenuLinks(),
+            'paginaAtual' => "Cadastros Vinculados",
+            //'empresas' => $DAO->SELECT_ALL()
+        ];
+
+        return view("cadastrosVinculados",$variaveis);
+    }
+
     public function excluir(Request $request, int $ID){
         
         $DAO->DELETEbyID($ID);
