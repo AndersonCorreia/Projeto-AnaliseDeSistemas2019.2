@@ -18,6 +18,6 @@ class Auth
         if($request->session()->has('ID')){
             return $next($request);
         }
-        return redirect()->route('entrar');
+        return redirect()->route('telaEntrar');
     }
 }

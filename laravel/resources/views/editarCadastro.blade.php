@@ -9,7 +9,7 @@
 </div>
 
 <div>
-<form class="col-xl-12 col-12 mx-sm-auto mt-sm-1" action="" method="POST" enctype="multipart/form-data">
+<form class="col-xl-12 col-12 mx-sm-auto mt-sm-1" action={{route("editarCadastro.post")}} method="POST" enctype="multipart/form-data">
 {{csrf_field()}}
     <fieldset>
         <div class="form-row col-msm">   
@@ -27,7 +27,7 @@
 
             <div class="form-group col-sm-3">
                 <span>Telefone</span>
-                <input class="form-control" maxlength="14" type="text" name="Telefone" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$"
+                <input class="form-control" maxlength="14" type="text" name="telefone" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$"
                 value="{{isset($registro['telefone']) ? $registro['telefone'] : ''}}" required>
             </div>
 
@@ -98,19 +98,19 @@
 
             <div class="form-group col-sm-4">
                 <span>Cidade</span>
-                <input class="form-control"  maxlength="40" type="text" name="Cidade" placeholder="Insira a cidade"
+                <input class="form-control"  maxlength="40" type="text" name="cidade" placeholder="Insira a cidade"
                 value="{{isset($registro['cidade']) ? $registro['cidade'] : ''}}" required>
             </div>
 
             <div class="form-group col-sm-4">
                 <span>Endereço</span>
-                <input class="form-control" maxlength="50" type="text" name="Endereço" placeholder="Insira o endereço"
+                <input class="form-control" maxlength="50" type="text" name="endereço" placeholder="Insira o endereço"
                 value="{{isset($registro['endereco']) ? $registro['endereco'] : ''}}" required>
             </div>
 
             <div class="form-group col-sm-1">
                 <span>Número</span>
-                <input class="form-control" maxlength="6" type="text" name="Número" placeholder="Nº"
+                <input class="form-control" maxlength="6" type="text" name="numero" placeholder="Nº"
                 value="{{isset($registro['numero']) ? $registro['numero'] : ''}}" required>
             </div>
             

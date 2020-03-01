@@ -38,7 +38,7 @@
                 <span>CNPJ</span>
                 <input class="form-control" type="text" maxlength="18" name="CNPJ" placeholder="99.999.999/9999-99" 
                 value=""  pattern="[0-9]{2}.[0-9]{3}.[0-9]{3}/[0-9]{4}-[0-9]{2}$" 
-                title="Insira o CNPJ. Digite apenas números" required>
+                title="Insira o CNPJ. Digite apenas números no formato xx.xxx.xxx/xxxx-xx" required>
             </div> 
 
             <div class="form-group col-sm-8">

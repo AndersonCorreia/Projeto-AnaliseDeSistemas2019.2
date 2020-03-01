@@ -1,15 +1,14 @@
 @include('layouts._includes.top')
-<div class="pt-4">
 @section('title', 'Entrar')
 
-<div id="login">
-    <div class="side-left">
+<div id="login h-100">
+    <div class="side-left h-100">
         <div class="img-figure">
             <img id="img-background-1" src="{{ asset('img\atendimento.jpg') }}">
         </div>
     </div>
     <div class="side-right">
-        <div class="text-center mx-auto col-md-10">
+        <div class="text-center mx-auto mt-5 py-3 col-md-10">
             <h1>Entre</h1>
         </div>
         <br>
@@ -22,12 +21,12 @@
             @endif
             
             <!-- E-mail -->
-            <div class="form-group">
+            <div class="form-group col">
                 <label for="userCadastro">Usuário</label>
                 <input class="form-control" placeholder="Insira o nome de usuário" id="userCadastro" name="usuario" type="text" required>
             </div>
             <!-- Senha -->
-            <div class="form-group">
+            <div class="form-group col">
                 <label for="senha">Senha</label>
                 <input minlength="4" maxlength="20" type="password" class="form-control" id="senha" name="senha" required>
             </div>
