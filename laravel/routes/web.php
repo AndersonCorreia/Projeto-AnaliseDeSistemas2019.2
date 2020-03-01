@@ -15,11 +15,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get("/cadastro", "CadastroController@telaCadastrar")->name("cadastro.show");
     Route::post("/cadastro", "CadastroController@criar")->name("cadastro.post");
 
-    Route::get("/cadastro/editar", "CadastroController@telaEditar")->name("editarCadastro.show");
+    Route::get("/cadastro/editar/{ID}/", "CadastroController@telaEditar")->name("editarCadastro.show");
     Route::post("/cadastro/editar", "CadastroController@editar")->name("editarCadastro.post");
 
-    Route::get("/cadastro/excluir/", "CadastroController@excluir")->name("excluirCadastro.post");
-    //Route::get("/cadastrosVinculados", "CadastroController@editarCadastro")->name("cadastrosVinculados.show"); //rota temporária
+    Route::get("/cadastro/excluir/{ID}/", "CadastroController@excluir")->name("excluirCadastro.post");
+    Route::get("/cadastrosVinculados", "CadastroController@editarCadastro")->name("cadastrosVinculados.show"); //rota temporária
 
 });
 
@@ -31,12 +31,4 @@ Route::post('/entrar','UserController@login')->name('login');
 Route::get('/entrar/erro', 'UserController@telaEntrarError')->name('loginError.show');
 Route::get("/logout", 'UserController@logout')->name('logout');
 
-Route::get('/', function () {
-    return view('inicio');
-})->name('inicio');
-
-require_once __DIR__."/../resources/views/util/layoutUtil.php";
-
-Route::get('/layout', function () {
-    return view('layouts.templateGeral', ['itensMenu' => getMenuLinks()]);
-});
+Route::get('/', "CadastroController@telaCadastrar")->name('inicio');
