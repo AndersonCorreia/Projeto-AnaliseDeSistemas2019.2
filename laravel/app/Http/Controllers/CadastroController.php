@@ -22,9 +22,9 @@ class CadastroController extends Controller{
         return redirect()->route("cadastrosVinculados.show");
     }
 
-    public function editar(Request $request){
+    public function editar(Request $request, int $ID){
 
-        $this->DAO->UPDATE($request->input() );
+        $this->DAO->UPDATE($request->input());
         return redirect()->route("cadastrosVinculados.show");
     }
 

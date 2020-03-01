@@ -16,7 +16,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post("/cadastro", "CadastroController@criar")->name("cadastro.post");
 
     Route::get("/cadastro/editar/{ID}/", "CadastroController@telaEditar")->name("editarCadastro.show");
-    Route::post("/cadastro/editar", "CadastroController@editar")->name("editarCadastro.post");
+    Route::post("/cadastro/editar/{ID}", "CadastroController@editar")->name("editarCadastro.post");
 
     Route::get("/cadastro/excluir/{ID}", "CadastroController@excluir")->name("excluirCadastro.post");
     

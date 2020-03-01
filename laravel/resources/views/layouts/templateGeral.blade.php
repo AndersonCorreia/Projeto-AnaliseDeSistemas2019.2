@@ -1,9 +1,9 @@
 @include('layouts._includes.top')
 <div class= "tela  bg-light">
     <div id="menuLateral" class= " border-right border-info">
-        <img id="logo" class = "img-fluid img-thumbnail" src="{!! asset('img/capamenu.jpg') !!}"> 
-        <div class="h-75 overflow-auto">
-            <nav class="p-lg-2 pr-1 py-5 my-5 navbar-left flex-column">
+        <img id="logo" class = "img-fluid img-thumbnail" src="{!! asset('img/capamenu2.png') !!}"> 
+        <div class=" overflow-auto">
+            <nav class="p-2 navbar-left flex-column">
                 @foreach ($itensMenu as $key => $item){{--Para adicionar os itens do menu dinamicamente --}}
                     {{--A unica utilidade em manter esse foreach seria esse if da pagina atual--}}
                     @if ($item['texto']==($paginaAtual ?? 'Inicio')){{--Para destacar a pagina atual no menu --}}
