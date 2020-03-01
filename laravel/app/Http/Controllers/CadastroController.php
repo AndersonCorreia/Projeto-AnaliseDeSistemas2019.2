@@ -23,7 +23,7 @@ class CadastroController extends Controller{
                 'itensMenu' => getMenuLinks(),
                 'paginaAtual' => "Adicionar cadastro de cliente",
                 'registro' => $request->input(),
-                'erroCNPJ' => "já existe um cadstro com este CNPJ."
+                'erroCNPJ' => "já existe um cadastro com este CNPJ."
             ];
 
             return view("cadastro",$variaveis);
@@ -35,12 +35,14 @@ class CadastroController extends Controller{
     }
 
     public function editar(Request $request){
-        if($this->DAO->SELECTbyCNPJ($request->input("CNPJ") ) ){
+
+        $CNPJantigo = $this->DAO->SELECTbyID($request->input("ID"))["CNPJ"];
+        if( $request->input("CNPJ") != $CNPJantigo && $this->DAO->SELECTbyCNPJ($request->input("CNPJ") ) ){
             $variaveis = [
                 'itensMenu' => getMenuLinks(),
                 'paginaAtual' => "Visualizar, editar ou excluir cadastro de cliente",
                 'registro' => $request->input(),
-                'erroCNPJ' => "já existe um cadstro com este CNPJ."
+                'erroCNPJ' => "já existe um cadastro com este CNPJ."
             ];
     
             return view("editarCadastro",$variaveis);
