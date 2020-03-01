@@ -114,7 +114,7 @@
                 value="{{isset($registro['numero']) ? $registro['numero'] : ''}}" required>
             </div>
             
-            <input type="hidden" value="{{ $registro['ID'] ?? '99' }}">
+            <input type="hidden" name="ID" value="{{ $registro['ID'] ?? '99' }}">
         </div>
     </fieldset>
         <div class="input-group-append">

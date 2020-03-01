@@ -79,6 +79,13 @@
         </div>
     </div>
     @endforeach
+    @else
+    <div class="alert alert-info" role="alert">
+        <p>Nenhum cliente cadastrado no sistema.
+           <br>
+           <a  href="{{route('cadastro.show')}}"  class="alert-link">CADASTRE UM AQUI</a>
+        </p>
+    </div>
     @endif
 </div>
 

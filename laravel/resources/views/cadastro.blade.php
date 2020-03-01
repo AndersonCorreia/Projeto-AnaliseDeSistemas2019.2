@@ -50,7 +50,7 @@
             <div class="form-group col-sm-2">    
                 <span>Inscrição Estadual</span>
                 <input class="form-control"  type="text" maxlength="9" name="inscricaoEstadual" placeholder="999999-99" pattern="[0-9]{6}-[0-9]{2}$" 
-                value="" title="Insira a Inscrição Estadual. Digite apenas números."required>
+                value="" title="Insira a Inscrição Estadual. Digite apenas números no formato xxxxxx-xx"required>
             </div>
 
             <div class="form-group col-sm-2">
@@ -115,7 +115,7 @@
     
         <div class="input-group-append">
         <button id="submit" type="submit" class="btn btn-primary mr-2">Cadastrar Cliente</button>
-            <a href={{route('cadastrosVinculados.show')}}></a><button type="button" class="btn btn-danger">Cancelar</button> </a>
+            <a href={{route('cadastrosVinculados.show')}}><button type="button" class="btn btn-danger">Cancelar</button> </a>
         </div>
     </fieldset>
 </form>
