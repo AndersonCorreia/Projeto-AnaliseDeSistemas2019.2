@@ -18,14 +18,37 @@ class CadastroController extends Controller{
 
     public function criar(Request $request){
 
-        $this->DAO->INSERT($request->input() );
-        return redirect()->route("cadastrosVinculados.show");
+        if($this->DAO->SELECTbyCNPJ($request->input("CNPJ") ) ){
+            $variaveis = [
+                'itensMenu' => getMenuLinks(),
+                'paginaAtual' => "Adicionar cadastro de cliente",
+                'registro' => $request->input(),
+                'erroCNPJ' => "já existe um cadstro com este CNPJ."
+            ];
+
+            return view("cadastro",$variaveis);
+        }
+        else {
+            $this->DAO->INSERT($request->input() );
+            return redirect()->route("cadastrosVinculados.show");
+        }
     }
 
     public function editar(Request $request){
-
-        $this->DAO->UPDATE($request->input());
-        return redirect()->route("cadastrosVinculados.show");
+        if($this->DAO->SELECTbyCNPJ($request->input("CNPJ") ) ){
+            $variaveis = [
+                'itensMenu' => getMenuLinks(),
+                'paginaAtual' => "Visualizar, editar ou excluir cadastro de cliente",
+                'registro' => $request->input(),
+                'erroCNPJ' => "já existe um cadstro com este CNPJ."
+            ];
+    
+            return view("editarCadastro",$variaveis);
+        }
+        else {
+            $this->DAO->UPDATE($request->input());
+            return redirect()->route("cadastrosVinculados.show");
+        }
     }
 
     public function cadastrosVinculados(Request $request){

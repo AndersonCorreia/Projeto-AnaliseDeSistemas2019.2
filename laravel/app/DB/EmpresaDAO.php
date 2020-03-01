@@ -16,7 +16,7 @@ class EmpresaDAO extends \App\DB\interfaces\DataAccessObject
     {
         $campos = "(razaoSocial, nomeFantasia, CNPJ, site, inscricaoEstadual, matriz, estado, cidade,
                     endereco, CEP, telefone, numero)";
-        $values = "VALUES  ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $values = "VALUES  ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $sql = "INSERT INTO $this->table $campos $values";
 
         $stmt = $this->dataBase->prepare($sql);
@@ -42,4 +42,18 @@ class EmpresaDAO extends \App\DB\interfaces\DataAccessObject
         return $stmt->execute();
     }
 
+    public function SELECTbyCNPJ($cnpj){
+
+        $sql = "SELECT * FROM empresa WHERE CNPJ = ?";
+        $stmt = $this->dataBase->prepare($sql);
+        $stmt->bind_param("s", $cnpj);
+        $stmt->execute();
+        $row = $stmt->get_result()->fetch_assoc();
+
+        if($row==[]){
+            return false;
+        }
+
+        return true;
+    }
 }

@@ -43,6 +43,9 @@
                 <input class="form-control" type="text" maxlength="18" name="CNPJ" placeholder="99.999.999/9999-99" 
                 value="{{isset($registro['CNPJ']) ? $registro['CNPJ'] : ''}}" pattern="[0-9]{2}.[0-9]{3}.[0-9]{3}/[0-9]{4}-[0-9]{2}$" 
                 title="Insira o CNPJ. Digite apenas números" required>
+                @if( isset($erroCNPJ) )
+                    <small id="cpfHelp" class="form-text text-danger">{{$erroCNPJ}}</small>
+                @endif
             </div> 
 
             <div class="form-group col-sm-8">
