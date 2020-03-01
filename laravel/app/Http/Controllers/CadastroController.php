@@ -18,14 +18,37 @@ class CadastroController extends Controller{
 
     public function criar(Request $request){
 
-        $this->DAO->INSERT($request->input() );
-        return redirect()->route("cadastrosVinculados.show");
+        if($this->DAO->SELECTbyCNPJ($request->input("CNPJ") ) ){
+            $variaveis = [
+                'itensMenu' => getMenuLinks(),
+                'paginaAtual' => "Adicionar cadastro de cliente",
+                'registro' => $request->input(),
+                'erroCNPJ' => "já existe um cadstro com este CNPJ."
+            ];
+
+            return view("cadastro",$variaveis);
+        }
+        else {
+            $this->DAO->INSERT($request->input() );
+            return redirect()->route("cadastrosVinculados.show");
+        }
     }
 
-    public function editar(Request $request, int $ID){
-
-        $this->DAO->UPDATE($request->input());
-        return redirect()->route("cadastrosVinculados.show");
+    public function editar(Request $request){
+        if($this->DAO->SELECTbyCNPJ($request->input("CNPJ") ) ){
+            $variaveis = [
+                'itensMenu' => getMenuLinks(),
+                'paginaAtual' => "Visualizar, editar ou excluir cadastro de cliente",
+                'registro' => $request->input(),
+                'erroCNPJ' => "já existe um cadstro com este CNPJ."
+            ];
+    
+            return view("editarCadastro",$variaveis);
+        }
+        else {
+            $this->DAO->UPDATE($request->input());
+            return redirect()->route("cadastrosVinculados.show");
+        }
     }
 
     public function cadastrosVinculados(Request $request){
@@ -38,7 +61,7 @@ class CadastroController extends Controller{
 
         $variaveis = [
             'itensMenu' => getMenuLinks(),
-            'paginaAtual' => "Editar ou excluir cadastro de cliente",
+            'paginaAtual' => "Visualizar, editar ou excluir cadastro de cliente",
             'registros' => $this->DAO->SELECT_ALL(),
         ];
 
@@ -55,7 +78,7 @@ class CadastroController extends Controller{
 
         $variaveis = [
             'itensMenu' => getMenuLinks(),
-            'paginaAtual' => "Editar ou excluir cadastro de cliente",
+            'paginaAtual' => "Visualizar, editar ou excluir cadastro de cliente",
             'registro' => $this->DAO->SELECTbyID($ID)
         ];
 
@@ -66,7 +89,7 @@ class CadastroController extends Controller{
 
         $variaveis = [
             'itensMenu' => getMenuLinks(),
-            'paginaAtual' => "Cadastrar Cliente",
+            'paginaAtual' => "Adicionar cadastro de cliente",
         ];
 
         return view("cadastro",$variaveis);

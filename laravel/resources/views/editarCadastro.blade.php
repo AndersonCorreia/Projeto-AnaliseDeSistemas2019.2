@@ -21,13 +21,13 @@
 
             <div class="form-group col-sm-2">
                 <span>CEP</span>
-                <input class="form-control" maxlength="9" type="text" name="CEP" placeholder="99999-999" pattern="[0-9]{5}-[0-9]{3}$" 
+                <input class="form-control" maxlength="9" type="text" name="CEP" placeholder="99999-999" OnKeyPress="formatar('#####-###', this)" pattern="[0-9]{5}-[0-9]{3}$" 
                 value="{{isset($registro['CEP']) ? $registro['CEP'] : ''}}" required>
             </div>
 
             <div class="form-group col-sm-3">
                 <span>Telefone</span>
-                <input class="form-control" maxlength="14" type="text" name="telefone" placeholder="(99)99999-9999" pattern="\([0-9]{2}\)[0-9]{4,6}[0-9]{3,4}$"
+                <input class="form-control" maxlength="14" type="text" name="telefone" placeholder="(99)99999-9999" OnKeyPress="formatar('##-#####-####', this)" pattern="\([0-9]{2}\)[0-9]{4,6}[0-9]{3,4}$"
                 value="{{isset($registro['telefone']) ? $registro['telefone'] : ''}}" required>
             </div>
 
@@ -40,9 +40,12 @@
             
             <div class="form-group col-sm-4">
                 <span>CNPJ</span>
-                <input class="form-control" type="text" maxlength="18" name="CNPJ" placeholder="99.999.999/9999-99" 
+                <input class="form-control" type="text" maxlength="18" name="CNPJ" placeholder="99.999.999/9999-99" OnKeyPress="formatar('##.###.###/####-##', this)"
                 value="{{isset($registro['CNPJ']) ? $registro['CNPJ'] : ''}}" pattern="[0-9]{2}.[0-9]{3}.[0-9]{3}/[0-9]{4}-[0-9]{2}$" 
                 title="Insira o CNPJ. Digite apenas números" required>
+                @if( isset($erroCNPJ) )
+                    <small id="cpfHelp" class="form-text text-danger">{{$erroCNPJ}}</small>
+                @endif
             </div> 
 
             <div class="form-group col-sm-8">
@@ -53,7 +56,7 @@
 
             <div class="form-group col-sm-2">    
                 <span>Inscrição Estadual</span>
-                <input class="form-control"  type="text" maxlength="9" name="inscricaoEstadual" placeholder="999999-99" pattern="[0-9]{6}-[0-9]{2}$" 
+                <input class="form-control"  type="text" maxlength="9" name="inscricaoEstadual" placeholder="999999-99" OnKeyPress="formatar('######-##', this)" pattern="[0-9]{6}-[0-9]{2}$" 
                 value="{{isset($registro['inscricaoEstadual']) ? $registro['inscricaoEstadual'] : ''}}" title="Insira a Inscrição Estadual. Digite apenas números."required>
             </div>
 
@@ -114,7 +117,7 @@
                 value="{{isset($registro['numero']) ? $registro['numero'] : ''}}" required>
             </div>
             
-            <input type="hidden" value="{{ $registro['ID'] ?? '99' }}">
+            <input type="hidden" name="ID" value="{{ $registro['ID'] ?? '99' }}">
         </div>
     </fieldset>
         <div class="input-group-append">
