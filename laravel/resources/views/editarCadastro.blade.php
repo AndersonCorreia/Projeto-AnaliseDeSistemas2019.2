@@ -104,7 +104,7 @@
 
             <div class="form-group col-sm-4">
                 <span>Endereço</span>
-                <input class="form-control" maxlength="50" type="text" name="endereço" placeholder="Insira o endereço"
+                <input class="form-control" maxlength="50" type="text" name="endereco" placeholder="Insira o endereço"
                 value="{{isset($registro['endereco']) ? $registro['endereco'] : ''}}" required>
             </div>
 
